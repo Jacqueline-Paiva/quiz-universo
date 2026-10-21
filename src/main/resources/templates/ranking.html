@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ranking galáctico</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <meta http-equiv="refresh" content="30">
+</head>
+
+<body>
+    <main class="painel">
+        <h1>🏆 Ranking galáctico</h1>
+        <p>Top 50 exploradores • atualização a cada 30 segundos</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Apelido</th>
+                    <th>Pontos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item,st : ${ranking}">
+                    <td th:text="${st.count}"></td>
+                    <td th:text="${item[0]}"></td>
+                    <td th:text="${item[1]}+'/10'"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p th:if="${#lists.isEmpty(ranking)}">Seja o primeiro a participar!</p><a class="botao" href="/">🚀 Voltar ao
+            início</a>
+    </main>
+</body>
+
+</html>

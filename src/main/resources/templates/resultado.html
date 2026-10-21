@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body>
+    <main class="painel centro">
+        <div class="planeta">🌟</div>
+        <h1>Missão concluída!</h1>
+        <div class="nota" th:text="${pontos}+'/10'"></div>
+        <h2 th:text="${mensagem}"></h2><a class="botao" href="/ranking">🏆 Ver ranking</a><a class="link"
+            href="/quiz">🚀 Jogar novamente</a>
+    </main>
+</body>
+
+</html>

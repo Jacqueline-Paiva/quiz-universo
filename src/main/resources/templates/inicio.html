@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafio do Universo</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body>
+    <main class="painel centro">
+        <div class="planeta">🪐</div>
+        <h1>DESAFIO DO UNIVERSO</h1>
+        <p>Você tem 10 perguntas para explorar o cosmos. Preparado?</p>
+        <form action="/entrar" method="post"><label for="apelido">Seu apelido</label><input id="apelido" name="apelido"
+                maxlength="30" minlength="3" required placeholder="Astronauta123"><label for="codigo">Código secreto
+                (para voltar a jogar)</label><input id="codigo" type="password" name="codigo" minlength="4"
+                maxlength="72" required placeholder="Crie ou informe seu código">
+            <p class="erro" th:if="${erro}" th:text="${erro}"></p><button>🚀 Iniciar missão</button>
+        </form><a class="link" href="/ranking">🏆 Ver ranking galáctico</a>
+    </main>
+</body>
+
+</html>
